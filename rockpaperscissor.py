@@ -45,12 +45,90 @@ print(classifica_numero(-2))  # Isso imprimirá "Negativo e Par"
 print(classifica_numero(0))  # Isso imprimirá "Zero"
 
 
+def distancia(altura, velocidade_aviao):
+    # Convertendo a velocidade do avião de km/h para m/s
+    velocidade_aviao_ms = (velocidade_aviao / 3.6)
+
+    # Calculando o tempo de voo usando a fórmula fornecida
+    tempo_de_voo = ((2 * altura) / 9.81) ** 0.5
+
+    # Calculando o alcance horizontal usando a fórmula fornecida
+    alcance_horizontal = velocidade_aviao_ms * tempo_de_voo
+
+    # Arredondando o alcance para 2 casas decimais
+    alcance_horizontal = round(alcance_horizontal, 2)
+
+    return alcance_horizontal
+
+# Exemplo de uso:
+altura_em_metros = 1000  # Altura em metros
+velocidade_do_aviao_km_h = 500  # Velocidade do avião em km/h
+
+# Chamando a função para calcular o alcance
+resultado = distancia(altura_em_metros, velocidade_do_aviao_km_h)
+print(f"A bomba percorrerá {resultado} metros até atingir o alvo no solo.")
 
 
 
 
+def hexagono(lado, unidade):
+    # Calcula a área do hexágono
+    area = (3 * (lado ** 2) * (3 ** 0.5)) / 2
 
-    
+    # Calcula o perímetro do hexágono (a soma dos lados)
+    perimetro = 6 * lado
+
+    # Formata os resultados com as unidades de medida
+    area_str = f"{area:.1f} {unidade}^2"
+    perimetro_str = f"{perimetro} {unidade}"
+
+    # Retorna os resultados em uma única string
+    resultado = f"área: {area_str} e perímetro: {perimetro_str}"
+    return resultado
+
+# Exemplo de uso:
+lado = 4  # Comprimento de um lado
+unidade = "cm"  # Unidade de medida
+
+# Chamando a função para calcular área e perímetro
+resultado = hexagono(lado, unidade)
+print(resultado)
+
+
+
+def saque(valor):
+    # Inicializa as variáveis para contar as cédulas
+    cedulas_50 = 0
+    cedulas_20 = 0
+    cedulas_10 = 0
+
+    # Calcula a quantidade de cédulas de 50 reais
+    while valor >= 50:
+        cedulas_50 += 1
+        valor -= 50
+
+    # Calcula a quantidade de cédulas de 20 reais
+    while valor >= 20:
+        cedulas_20 += 1
+        valor -= 20
+
+    # Calcula a quantidade de cédulas de 10 reais
+    while valor >= 10:
+        cedulas_10 += 1
+        valor -= 10
+
+    # Cria a string de saída com as quantidades de cédulas
+    resultado = f"50: {cedulas_50} 20: {cedulas_20} 10: {cedulas_10}"
+    return resultado
+
+# Exemplo de uso:
+valor_de_saque = 130  # Valor de saque em reais
+
+# Chamando a função para calcular as cédulas necessárias
+resultado = saque(valor_de_saque)
+print(resultado)
+
+
     
         
 
