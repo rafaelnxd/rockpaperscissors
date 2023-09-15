@@ -1,4 +1,4 @@
-import random
+8import random
 
 
 user_action = input("Digite a sua escolha (Pedra, Papel ou Tesoura):")
@@ -25,7 +25,27 @@ elif user_action == "Tesoura":
         print(f'Tesoura perde de Pedra, você perdeu')
 
 
-        
+        def classifica_numero(numero):
+    if numero > 0:
+        if numero % 2 == 0:
+            return "Positivo e Par"
+        else:
+            return "Positivo e Ímpar"
+    elif numero < 0:
+        if numero % 2 == 0:
+            return "Negativo e Par"
+        else:
+            return "Negativo e Ímpar"
+    else:
+        return "Zero"
+
+# Exemplos de uso:
+print(classifica_numero(5))  # Isso imprimirá "Positivo e Ímpar"
+print(classifica_numero(-2))  # Isso imprimirá "Negativo e Par"
+print(classifica_numero(0))  # Isso imprimirá "Zero"
+
+
+
 
 
 
