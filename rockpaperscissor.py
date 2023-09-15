@@ -128,6 +128,24 @@ valor_de_saque = 130  # Valor de saque em reais
 resultado = saque(valor_de_saque)
 print(resultado)
 
+def saque(valor):
+    # Inicializa as variáveis para contar as cédulas
+    cedulas_50 = valor // 50
+    valor %= 50
+    cedulas_20 = valor // 20
+    valor %= 20
+    cedulas_10 = valor // 10
+
+    # Cria a string de saída com as quantidades de cédulas
+    resultado = f"50: {cedulas_50} 20: {cedulas_20} 10: {cedulas_10}"
+    return resultado
+
+# Exemplo de uso:
+valor_de_saque = 130  # Valor de saque em reais
+
+# Chamando a função para calcular as cédulas necessárias
+resultado = saque(valor_de_saque)
+print(resultado)
 
     
         
